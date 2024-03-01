@@ -82,6 +82,38 @@ style frame:
 ################################################################################
 
 
+
+## Custom Screens
+
+
+#TODO - learn how git ingnores work lol
+
+#major systems screens should be accessible through buttons in debug
+screen debug_screen():
+    text "debug"
+
+# handle combat
+screen combat_screen():
+    text "combat"
+
+# handle character creation
+screen character_creation_screen():
+    text "character creation screen"
+
+screen stats_screen():
+    text "stats_screen"
+
+screen camp_life_screen():
+    text "camp life"
+
+
+
+
+
+
+
+# Default Screens
+
 ## Say screen ##################################################################
 ##
 ## The say screen is used to display dialogue to the player. It takes two

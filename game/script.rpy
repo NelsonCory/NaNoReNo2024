@@ -31,3 +31,9 @@ label start:
     # This ends the game.
 
     return
+
+
+
+label debug:
+
+    call debug_screen
