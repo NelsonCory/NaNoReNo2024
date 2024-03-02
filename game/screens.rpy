@@ -94,7 +94,34 @@ screen debug_screen():
 
 # handle combat
 screen combat_screen():
-    text "combat"
+    frame:
+        xalign 0.25 ypos 50
+        vbox:
+            text ThrokChar.name
+            text "HP: [ThrokChar.health]"
+            textbutton "DEBUG: DIE":
+                    action Function(ThrokChar.attack,target=ThrokChar)
+    #place efriends on screen
+    for index, item in enumerate(friendList):
+        frame:
+            xalign 0.9  yalign 0.4 + index / 3
+            vbox:
+                text item.name
+                text "HP: [item.health]"
+                
+        add item.sprite xalign 0.13  yalign 0.4 + index / 3
+
+    #place enemies on screen
+    for index, item in enumerate(enemyList):
+        frame:
+            xalign 0.9  yalign 0.4 + index / 3
+            vbox:
+                text item.name
+                text "HP: [item.health]"
+                textbutton "Attack":
+                    action Function(ThrokChar.attack,target=item)
+                    
+        add item.sprite xalign 0.8  yalign 0.4 + index / 3
 
 # handle character creation
 screen character_creation_screen():
@@ -104,6 +131,7 @@ screen stats_screen():
     text "stats_screen"
 
 screen camp_life_screen():
+
     text "camp life"
 
 
